@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konto</title>
+</head>
+<body>
+    <h1>Konto Firmy</h1>
+    <p>Saldo: {{ saldo }} PLN</p>
+    <h2>Stan Magazynu:</h2>
+    <ul>
+        {% for produkt, dane in magazyn.items() %}
+            <li>{{ produkt }} - Ilość: {{ dane['stan magazynu(sztuk)'] }}, Cena: {{ dane['cena'] }} PLN</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Powrót do strony głównej</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprzedaż</title>
+</head>
+<body>
+    <h1>Sprzedaż Produktu</h1>
+    <form action="/sprzedaz" method="post">
+        <label>Nazwa produktu:</label>
+        <input type="text" name="produkt" required><br>
+        <label>Cena:</label>
+        <input type="number" name="cena" step="0.01" required><br>
+        <label>Ilość:</label>
+        <input type="number" name="ilosc" required><br>
+        <input type="submit" value="Zarejestruj Sprzedaż">
+    </form>
+
+    <h2>Dostępne w Magazynie</h2>
+    <table border="1">
+        <tr>
+            <th>Produkt</th>
+            <th>Stan Magazynowy</th>
+            <th>Cena</th>
+        </tr>
+        {% for produkt, dane in magazyn.items() %}
+        <tr>
+            <td>{{ produkt }}</td>
+            <td>{{ dane['stan magazynu(sztuk)'] }}</td>
+            <td>{{ dane['cena'] }} PLN</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Powrót do strony głównej</a>
+</body>
+</html>

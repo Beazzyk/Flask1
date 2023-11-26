@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stan Magazynu</title>
+</head>
+<body>
+    <h1>Stan Magazynu</h1>
+    <ul>
+        {% for produkt, dane in magazyn.items() %}
+            <li>{{ produkt }} - Ilość: {{ dane['stan magazynu(sztuk)'] }}, Cena: {{ dane['cena'] }} PLN</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Powrót do strony głównej</a>
+</body>
+</html>

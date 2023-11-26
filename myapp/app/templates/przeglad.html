@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przegląd Firmy</title>
+</head>
+<body>
+    <h1>Przegląd Firmy</h1>
+    <h2>Saldo:</h2>
+    <p>{{ saldo }} PLN</p>
+    <h2>Stan Magazynu:</h2>
+    <ul>
+        {% for produkt, dane in magazyn.items() %}
+            <li>{{ produkt }} - Ilość: {{ dane['stan magazynu(sztuk)'] }}, Cena: {{ dane['cena'] }} PLN</li>
+        {% endfor %}
+    </ul>
+    <h2>Historia Operacji:</h2>
+    <ul>
+        {% for operacja in historia %}
+            <li>{{ operacja }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Powrót do strony głównej</a>
+</body>
+</html>

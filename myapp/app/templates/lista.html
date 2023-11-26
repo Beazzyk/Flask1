@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Operacji</title>
+</head>
+<body>
+    <h1>Historia Operacji</h1>
+    <ul>
+        {% for operacja in historia %}
+            <li>{{ operacja }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Powrót do strony głównej</a>
+</body>
+</html>
