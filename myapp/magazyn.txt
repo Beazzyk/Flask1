@@ -1,0 +1,3 @@
+£ódka: Stan magazynu: 104 sztuk, Cena: 1500 PLN/sztuka
+Wêdka: Stan magazynu: 8 sztuk, Cena: 400 PLN/sztuka
+Przynêta: Stan magazynu: 200 sztuk, Cena: 15 PLN/sztuka

@@ -1,5 +1,10 @@
-from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+db = SQLAlchemy()
 
-from myapp.app import routes
+def create_app():
+
+
+    from myapp.app.models import Produkt, Transakcja, Saldo
+
+    return app

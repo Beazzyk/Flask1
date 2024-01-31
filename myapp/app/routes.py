@@ -1,8 +1,9 @@
 
 from . import app
 from flask import render_template, redirect, url_for, request
-
+from myapp import db
 from myapp.app.manager_class import Manager
+from myapp.app.models import Transakcja
 
 manager = Manager()
 
@@ -23,6 +24,10 @@ def sprzedaz():
         ilosc = int(request.form.get('ilosc'))
         manager.zarejestruj_sprzedaz(produkt, cena, ilosc)
 
+        transakcja = Transakcja(typ='Sprzedaż', produkt_id=produkt, ilosc=ilosc, cena=cena)
+        db.session.add(transakcja)
+        db.session.commit()
+
 
         return redirect(url_for('sprzedaz'))
     else:
@@ -37,6 +42,11 @@ def zakup():
         cena = float(request.form.get('cena'))
         ilosc = int(request.form.get('ilosc'))
         manager.zarejestruj_zakup(produkt, cena, ilosc)
+
+        transakcja = Transakcja(typ='Zakup', produkt_id=produkt, ilosc=ilosc, cena=cena)
+        db.session.add(transakcja)
+        db.session.commit()
+
         return redirect(url_for('index'))
     return render_template('zakup.html')
 

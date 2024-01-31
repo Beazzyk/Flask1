@@ -184,4 +184,11 @@ class Manager:
         else:
             print("Brak wystarczających środków na koncie.")
 
+    def aktualizuj_saldo(self, kwota):
+        saldo = Saldo.query.first()
+        if saldo is None:
+            saldo = Saldo(kwota=0.0)
+            saldo.kwota += kwota
+
+        db.session.commit()
 
